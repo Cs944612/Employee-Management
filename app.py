@@ -17,7 +17,7 @@ class Employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     position = db.Column(db.String(100), nullable=False)
-    salary = db.Column(db.Float, nullable=False)
+    salary = db.Column(db.Float, nullable=False)  # Salary is now considered in Rupees
 
     def __repr__(self):
         return f"<Employee {self.name}>"
@@ -37,7 +37,7 @@ def index():
 def add_employee():
     name = request.form['name']
     position = request.form['position']
-    salary = request.form['salary']
+    salary = float(request.form['salary'])  # Ensure input is converted to float (Rupees)
 
     new_employee = Employee(name=name, position=position, salary=salary)
     db.session.add(new_employee)
@@ -53,7 +53,7 @@ def edit_employee(id):
     if request.method == 'POST':
         employee.name = request.form['name']
         employee.position = request.form['position']
-        employee.salary = request.form['salary']
+        employee.salary = float(request.form['salary'])  # Ensure input is stored correctly
         db.session.commit()
 
         return redirect(url_for('index'))

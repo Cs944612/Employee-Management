@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Database</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <h1>Employee List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Salary</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for employee in employees %}
-            <tr>
-                <td>{{ employee.name }}</td>
-                <td>{{ employee.position }}</td>
-                <td>${{ employee.salary }}</td>
-                <td>
-                    <a href="{{ url_for('edit_employee', id=employee.id) }}">Edit</a>
-                    <a href="{{ url_for('delete_employee', id=employee.id) }}" onclick="return confirm('Are you sure?')">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Employee Database</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='styles.css') }}"
+        />
+    </head>
+    <body>
+        <h1>Employee List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Salary (₹)</th>
+                    <!-- Updated to indicate salary is in Rupees -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>₹{{ employee.salary }}</td>
+                    <!-- Changed $ to ₹ -->
+                    <td>
+                        <a href="{{ url_for('edit_employee', id=employee.id) }}"
+                            >Edit</a
+                        >
+                        <a
+                            href="{{ url_for('delete_employee', id=employee.id) }}"
+                            onclick="return confirm('Are you sure?')"
+                            >Delete</a
+                        >
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-    <h2>Add New Employee</h2>
-    <form action="{{ url_for('add_employee') }}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="position">Position:</label>
-        <input type="text" id="position" name="position" required>
-        
-        <label for="salary">Salary:</label>
-        <input type="number" id="salary" name="salary" step="0.01" required>
-        
-        <button type="submit">Add Employee</button>
-    </form>
-</body>
+        <h2>Add New Employee</h2>
+        <form action="{{ url_for('add_employee') }}" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position" required />
+
+            <label for="salary">Salary (₹):</label>
+            <!-- Updated label -->
+            <input
+                type="number"
+                id="salary"
+                name="salary"
+                step="0.01"
+                required
+            />
+
+            <button type="submit">Add Employee</button>
+        </form>
+    </body>
 </html>
