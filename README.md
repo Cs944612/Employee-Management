@@ -89,15 +89,15 @@ http://127.0.0.1:5000/
 
 employee-management-system/
 │
-├── app.py                     # Main Flask application file
-├── requirements.txt           # List of Python dependencies
+├──app.py                     # Main Flask application file
+├──requirements.txt           # List of Python dependencies
 │
-├── static/
-│   └── styles.css             # CSS file for styling the frontend
+├──static/
+│   └──styles.css             # CSS file for styling the frontend
 │
-└── templates/
-    ├── index.html             # Homepage to display and add employees
-    └── edit.html              # Page to edit employee details
+└──templates/
+    ├──index.html             # Homepage to display and add employees
+    └──edit.html              # Page to edit employee details
 
 
 ## Usage
