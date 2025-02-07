@@ -17,9 +17,9 @@ A simple Flask-based web application for managing employee records. This project
 
 ## Technologies Used
 
-***Backend:*** Flask, SQLAlchemy
-***Frontend:*** HTML, CSS
-***Database:*** SQLite
+- ***Backend:*** Flask, SQLAlchemy
+- ***Frontend:*** HTML, CSS
+- ***Database:*** SQLite
 
 ## Prerequisites
 
