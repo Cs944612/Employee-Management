@@ -4,11 +4,11 @@ A simple Flask-based web application for managing employee records. This project
 
 ## Features
 
-***1. View Employees:*** Display a list of all employees with their details (name, position, salary).
-***2. Add Employees:*** Add new employees to the database.
-***3. Edit Employees:*** Update existing employee details.
-***4. Delete Employees:*** Remove employees from the database.
-***5. Simple UI:*** Clean and user-friendly interface styled with CSS.
+*** 1. View Employees:*** Display a list of all employees with their details (name, position, salary).
+*** 2. Add Employees:*** Add new employees to the database.
+*** 3. Edit Employees:*** Update existing employee details.
+*** 4. Delete Employees:*** Remove employees from the database.
+*** 5. Simple UI:*** Clean and user-friendly interface styled with CSS.
 
 
 ## Technologies Used
